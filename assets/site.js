@@ -6,9 +6,29 @@ function qs(sel, root = document) { return root.querySelector(sel); }
   const btn = qs('[data-menu-btn]');
   if (!nav || !btn) return;
 
-  btn.addEventListener('click', () => {
-    const isOpen = nav.classList.toggle('open');
+  function setOpen(isOpen) {
+    nav.classList.toggle('open', isOpen);
     btn.setAttribute('aria-expanded', String(isOpen));
+    btn.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+    document.body.classList.toggle('menu-open', isOpen);
+  }
+
+  btn.addEventListener('click', () => {
+    const isOpen = !nav.classList.contains('open');
+    setOpen(isOpen);
+  });
+
+  // Close on link click (mobile)
+  nav.addEventListener('click', (e) => {
+    const a = e.target && e.target.closest ? e.target.closest('a') : null;
+    if (!a) return;
+    setOpen(false);
+  });
+
+  // Close on Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key !== 'Escape') return;
+    setOpen(false);
   });
 })();
 
