@@ -3,19 +3,19 @@
 
 [[redirects]]
   from = "http://sweetspicygoddess.com/*"
-  to = "https://www.sweetspicygoddess.com/:splat"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "https://sweetspicygoddess.com/*"
-  to = "https://www.sweetspicygoddess.com/:splat"
+  to = "https://sweetspicygoddess.com/:splat"
   status = 301
   force = true
 
 [[redirects]]
   from = "http://www.sweetspicygoddess.com/*"
-  to = "https://www.sweetspicygoddess.com/:splat"
+  to = "https://sweetspicygoddess.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.sweetspicygoddess.com/*"
+  to = "https://sweetspicygoddess.com/:splat"
   status = 301
   force = true
 

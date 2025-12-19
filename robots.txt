@@ -1,6 +1,6 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.sweetspicygoddess.com/sitemap.xml
+Sitemap: https://sweetspicygoddess.com/sitemap.xml
 
 
