@@ -236,6 +236,12 @@ button, input, textarea{font:inherit}
   flex-direction:column;
   justify-content:center;
 }
+.hero-ctas{
+  display:flex;
+  flex-wrap:wrap;
+  gap: 10px;
+  margin-top: 6px;
+}
 .welcome-script{
   font-family: "Brush Script MT","Segoe Script","Apple Chancery",cursive;
   font-size: 54px;
