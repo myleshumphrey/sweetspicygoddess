@@ -1,0 +1,71 @@
+[build]
+  publish = "."
+
+[[redirects]]
+  from = "http://sweetspicygoddess.com/*"
+  to = "https://www.sweetspicygoddess.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://sweetspicygoddess.com/*"
+  to = "https://www.sweetspicygoddess.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.sweetspicygoddess.com/*"
+  to = "https://www.sweetspicygoddess.com/:splat"
+  status = 301
+  force = true
+
+# Pretty URL helpers (so /about works as well as /about/)
+[[redirects]]
+  from = "/about"
+  to = "/about/"
+  status = 301
+
+[[redirects]]
+  from = "/courses"
+  to = "/courses/"
+  status = 301
+
+[[redirects]]
+  from = "/tools"
+  to = "/tools/"
+  status = 301
+
+[[redirects]]
+  from = "/blog"
+  to = "/blog/"
+  status = 301
+
+[[redirects]]
+  from = "/shop"
+  to = "/shop/"
+  status = 301
+
+[[redirects]]
+  from = "/contact"
+  to = "/contact/"
+  status = 301
+
+[[redirects]]
+  from = "/legal"
+  to = "/legal/"
+  status = 301
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+
