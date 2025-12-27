@@ -598,20 +598,25 @@ section{padding: 44px 0}
   max-width: 600px;
   margin: 0 auto;
   position:relative;
+  overflow:hidden;
 }
 .social-carousel{
   position:relative;
   overflow:hidden;
   border-radius: var(--radius-lg);
+  width:100%;
 }
 .carousel-track{
   display:flex;
   transition: transform 0.5s ease;
   will-change: transform;
+  width:100%;
+  position:relative;
 }
 .carousel-slide{
   min-width:100%;
   flex-shrink:0;
+  width:100%;
 }
 .social-card{
   background:#fff;
@@ -632,6 +637,12 @@ section{padding: 44px 0}
   max-width:100% !important;
   margin:0 !important;
   min-height: 500px;
+}
+.social-card blockquote.tiktok-embed,
+.social-card blockquote.instagram-media{
+  width:100% !important;
+  max-width:100% !important;
+  min-width:100% !important;
 }
 .tiktok-card{
   background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
@@ -812,9 +823,50 @@ section{padding: 44px 0}
   }
   .grid-3{grid-template-columns: 1fr}
   .social-grid{grid-template-columns: 1fr; max-width: 100%}
-  .social-carousel-wrapper{max-width: 100%; padding: 0 10px}
-  .social-card{margin: 0; min-height: 450px}
-  .carousel-btn{width: 40px; height: 40px; font-size: 24px}
+  .social-carousel-wrapper{
+    max-width: 100%; 
+    padding: 0;
+    overflow:hidden;
+  }
+  .social-carousel{
+    overflow:hidden;
+    width:100%;
+  }
+  .carousel-track{
+    display:flex !important;
+    flex-wrap:nowrap !important;
+    overflow:hidden;
+  }
+  .carousel-slide{
+    min-width:100% !important;
+    width:100% !important;
+    flex-shrink:0 !important;
+  }
+  .social-card{
+    margin: 0; 
+    min-height: 450px;
+    width:100%;
+    padding: 20px 12px;
+  }
+  .social-card iframe,
+  .social-card blockquote{
+    width:100% !important;
+    max-width:100% !important;
+    min-width:100% !important;
+    min-height: 450px !important;
+  }
+  .social-card blockquote.tiktok-embed,
+  .social-card blockquote.instagram-media{
+    width:100% !important;
+    max-width:100% !important;
+    min-width:100% !important;
+  }
+  .carousel-btn{
+    width: 40px; 
+    height: 40px; 
+    font-size: 24px;
+    z-index:20;
+  }
   .carousel-btn-prev{left: 8px}
   .carousel-btn-next{right: 8px}
   .footer-grid{grid-template-columns: 1fr 1fr}
