@@ -167,17 +167,24 @@ function qs(sel, root = document) { return root.querySelector(sel); }
     const btn = wrap.querySelector('[data-play-btn]');
     if (!video || !btn) return;
 
-    function showBtn() { btn.classList.remove('is-hidden'); }
-    function hideBtn() { btn.classList.add('is-hidden'); }
+    video.removeAttribute('controls');
+
+    function showBtn() {
+      btn.classList.remove('is-hidden');
+      video.removeAttribute('controls');
+    }
+    function hideBtn() {
+      btn.classList.add('is-hidden');
+      video.setAttribute('controls', '');
+    }
 
     btn.addEventListener('click', () => {
-      if (video.paused) { video.play(); hideBtn(); }
-      else { video.pause(); showBtn(); }
+      video.play();
+      hideBtn();
     });
 
     video.addEventListener('click', () => {
-      if (video.paused) { video.play(); hideBtn(); }
-      else { video.pause(); showBtn(); }
+      if (!video.paused) { video.pause(); showBtn(); }
     });
 
     video.addEventListener('pause', showBtn);
