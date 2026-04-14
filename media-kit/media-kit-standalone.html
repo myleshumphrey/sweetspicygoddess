@@ -1,0 +1,611 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Media Kit — Ki'Loni Lee | Sweet Spicy Goddess</title>
+    <meta name="description" content="Ki'Loni Lee — lifestyle, fashion, and experiences. Audience stats, featured content, and partnership contact for brands." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+    <style>
+      :root{
+        --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+        --serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      *{box-sizing:border-box}
+      html,body{height:100%}
+      body{
+        margin:0;
+        --mk-bg: #ddd4c4;
+        --mk-text: #69584c;
+        --mk-muted: rgba(105,88,76,.88);
+        --mk-line: rgba(105,88,76,.42);
+        --mk-serif: "Cormorant Garamond", ui-serif, Georgia, "Times New Roman", serif;
+        background: var(--mk-bg);
+        color: var(--mk-text);
+        font-family: var(--sans);
+        line-height:1.5;
+      }
+      img{max-width:100%; height:auto; display:block}
+      a{color:inherit; text-decoration:none}
+      button, input, textarea{font:inherit}
+
+      .media-kit{
+        max-width: 1120px;
+        margin: 0 auto;
+        padding: 28px 28px 20px;
+        font-family: var(--mk-serif);
+      }
+      .mk-header{ text-align: left; padding: 0; }
+      .mk-title{
+        margin: 0;
+        font-size: clamp(3.35rem, 6vw, 4.6rem);
+        font-weight: 700;
+        letter-spacing: .04em;
+        text-transform: uppercase;
+        color: var(--mk-text);
+        line-height: .96;
+      }
+      .mk-tagline{
+        margin: 4px 0 0;
+        font-size: clamp(1.05rem, 2vw, 1.35rem);
+        letter-spacing: .06em;
+        text-transform: uppercase;
+        color: var(--mk-muted);
+        font-weight: 600;
+      }
+      .mk-rule{
+        border: 0;
+        border-top: 1px solid var(--mk-line);
+        margin: 12px 0;
+      }
+      .mk-header + .mk-rule{
+        width: 100%;
+        margin: 4px 0 0;
+      }
+      .mk-rule--before-featured{ margin: 10px 0 8px; }
+
+      .mk-section{ margin: 0; }
+      .mk-section-title{
+        margin: 0 0 6px;
+        font-size: 1.95rem;
+        font-weight: 700;
+        letter-spacing: .03em;
+        text-transform: uppercase;
+        color: var(--mk-text);
+      }
+      .mk-section-title-center{ text-align: center; }
+
+      .mk-about-stats-col > .mk-about-block > .mk-section-title{
+        font-size: clamp(2.05rem, 2.6vw, 2.45rem);
+        margin: 0 0 4px;
+      }
+      .mk-about-block{ margin-top: -12px; }
+      .mk-stats-wrap{ margin-top: 22px; }
+      .mk-stats-inline-title{
+        margin: 0 0 6px;
+        font-size: clamp(1.85rem, 2.2vw, 2.15rem);
+      }
+
+      .mk-about-stats-col{
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        min-width: 0;
+      }
+      .mk-about-grid{
+        display:grid;
+        grid-template-columns: minmax(0, 1fr) minmax(300px, 396px);
+        gap: 12px 28px;
+        align-items: start;
+      }
+      .mk-about-copy p{
+        margin: 0;
+        max-width: none;
+        font-size: clamp(1.55rem, 1.9vw, 1.82rem);
+        line-height: 1.08;
+        color: var(--mk-text);
+      }
+      .mk-about-photo{
+        margin: 0;
+        align-self: start;
+        width: 100%;
+        max-width: 396px;
+        justify-self: end;
+      }
+      .mk-about-photo img{
+        width: 100%;
+        height: auto;
+        aspect-ratio: 3 / 4;
+        object-fit: cover;
+        border-radius: 2px;
+        box-shadow: 0 8px 28px rgba(58,52,46,.1);
+      }
+
+      /* Stats row */
+      .mk-about-stats-col .mk-stats-layout{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0;
+        width: 100%;
+        min-width: 0;
+        overflow-x: auto;
+        overflow-y: visible;
+        -webkit-overflow-scrolling: touch;
+      }
+      .mk-about-stats-col .mk-stat-rings{
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        gap: 6px 8px;
+        align-items: flex-start;
+        flex: 0 0 auto;
+        min-width: 0;
+      }
+      .mk-about-stats-col .mk-demo{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 3px;
+        flex: 0 0 auto;
+        align-self: center;
+        padding-top: 0;
+      }
+      .mk-about-stats-col .mk-demo.mk-demo--inline{
+        flex-direction: row;
+        align-items: center;
+        gap: 0.65rem;
+      }
+      .mk-about-stats-col .mk-demo-row{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 0.45rem;
+        color: var(--mk-text);
+        flex-shrink: 0;
+      }
+      .mk-about-stats-col .mk-demo-icon{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        width: 24px;
+        color: var(--mk-text);
+      }
+      .mk-about-stats-col .mk-demo-svg{
+        width: 22px;
+        height: 42px;
+        display: block;
+        flex-shrink: 0;
+      }
+      .mk-about-stats-col .mk-demo-svg--female{ width: 24px; }
+      .mk-about-stats-col .mk-demo-pct{
+        font-family: var(--mk-serif);
+        font-size: 1.18rem;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+        font-variant-numeric: tabular-nums;
+        line-height: 1;
+        min-width: 0;
+      }
+      .mk-about-stats-col .mk-platform{
+        flex: 0 0 auto;
+        min-width: 0;
+        text-align: left;
+        padding-top: 0;
+      }
+      .mk-about-stats-col .mk-stat-ring{ width: 64px; height: 64px; }
+      .mk-about-stats-col .mk-stat-value{ font-size: 1.2rem; }
+      .mk-about-stats-col .mk-stat-label{ font-size: .78rem; max-width: 76px; }
+      .mk-about-stats-col .mk-platform-title{
+        font-size: .88rem;
+        margin: 0 0 6px;
+        text-align: left;
+      }
+      .mk-about-stats-col .mk-platform-list--lines{
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        font-size: .92rem;
+        line-height: 1.4;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: var(--mk-text);
+      }
+      .mk-about-stats-col .mk-platform-list--lines li{
+        display: block;
+        text-align: left;
+        margin: 0;
+        padding: 0;
+      }
+      .mk-about-stats-col .mk-platform-list--lines li + li{ margin-top: 2px; }
+
+      .mk-stat-rings{
+        display: flex;
+        flex-wrap: nowrap;
+        flex: 0 0 auto;
+        gap: 8px 10px;
+        align-items: center;
+      }
+      .mk-stat{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        gap:6px;
+        text-align:center;
+        flex: 0 0 auto;
+        min-width: 0;
+      }
+      .mk-stat-ring{
+        width: 78px;
+        height: 78px;
+        border-radius: 50%;
+        border: 2px solid rgba(108,91,79,.58);
+        display:flex;
+        align-items:center;
+        justify-content:center;
+      }
+      .mk-stat-value{
+        font-size: 1.42rem;
+        font-weight: 700;
+        letter-spacing: .02em;
+        line-height: 1.1;
+      }
+      .mk-stat-label{
+        font-size: .9rem;
+        letter-spacing: .01em;
+        text-transform: capitalize;
+        color: var(--mk-muted);
+        max-width: 92px;
+        line-height: 1.15;
+      }
+
+      /* Featured content */
+      .mk-featured-grid{
+        display:grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px 18px;
+        align-items: start;
+      }
+      .mk-feat{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .mk-feat-heading{
+        margin: 0 0 8px;
+        font-size: 1.45rem;
+        font-weight: 700;
+        letter-spacing: 0;
+        text-transform: none;
+        text-align: center;
+        color: var(--mk-text);
+      }
+      .mk-feat-fallback{
+        margin-top: 6px;
+        font-size: .95rem;
+        letter-spacing: 0;
+        color: var(--mk-muted);
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+      .mk-feat-fallback:hover{ opacity: .85; color: var(--mk-text); }
+      .mk-feat-frame{
+        position: relative;
+        border-radius: 2px;
+        overflow: hidden;
+        background: rgba(58,52,46,.04);
+        aspect-ratio: 9 / 16;
+        max-height: 390px;
+        margin: 0 auto;
+        width: 100%;
+        box-shadow: 0 10px 28px rgba(58,52,46,.14);
+      }
+      .mk-feat-frame.mk-feat-frame--video{
+        aspect-ratio: auto;
+        max-height: none;
+      }
+      .mk-feat-frame--video{
+        position: relative;
+        width: 100%;
+        max-width: min(100%, 340px);
+        margin: 0 auto;
+        overflow: hidden;
+        border-radius: 2px;
+        background: #0c0c0c;
+        box-shadow: none;
+      }
+      .mk-featured-video{
+        display: block;
+        width: 100%;
+        height: auto;
+        background: #000;
+      }
+      .mk-play-btn{
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: none;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+        color: #fff;
+        z-index: 2;
+        transition: opacity .25s ease;
+      }
+      .mk-play-btn svg{
+        width: 64px;
+        height: 64px;
+        filter: drop-shadow(0 2px 8px rgba(0,0,0,.35));
+        transition: transform .15s ease;
+      }
+      .mk-play-btn:hover svg{ transform: scale(1.1); }
+      .mk-play-btn.is-hidden{ opacity: 0; pointer-events: none; }
+
+      /* Footer */
+      .mk-footer{
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:space-between;
+        gap: 12px 24px;
+        padding: 8px 0 0;
+        font-size: .95rem;
+        color: var(--mk-muted);
+      }
+      .mk-footer p{ margin:0; }
+      .mk-footer-label{
+        text-transform: lowercase;
+        font-style: italic;
+        margin-right: 4px;
+      }
+      .mk-footer a{
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+      .mk-footer a:hover{ opacity: .85; }
+
+      /* Responsive */
+      @media (max-width: 720px){
+        .media-kit{ padding: 16px 18px 28px; }
+        .mk-title{ font-size: clamp(2.8rem, 11vw, 3.8rem); }
+        .mk-tagline{ font-size: 1rem; }
+        .mk-section-title{ font-size: 1.55rem; }
+        .mk-about-grid{ grid-template-columns: 1fr; gap: 16px; }
+        .mk-about-photo{
+          max-width: min(396px, 92vw);
+          margin: 0 auto;
+          justify-self: center;
+        }
+        .mk-about-copy p{ font-size: 1.18rem; line-height: 1.15; }
+        .mk-about-stats-col .mk-stats-layout{
+          flex-direction: column;
+          flex-wrap: wrap;
+          align-items: stretch;
+          justify-content: flex-start;
+          gap: 14px;
+          overflow-x: visible;
+        }
+        .mk-about-stats-col .mk-stat-rings{
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+        .mk-about-stats-col .mk-demo{
+          justify-content: center;
+          flex-wrap: wrap;
+        }
+        .mk-about-stats-col .mk-demo.mk-demo--inline{
+          justify-content: center;
+          flex-wrap: wrap;
+          row-gap: 6px;
+        }
+        .mk-about-stats-col .mk-platform{ text-align: left; }
+        .mk-feat-heading{ font-size: 1.35rem; }
+        .mk-featured-grid{
+          grid-template-columns: 1fr;
+          max-width: min(100%, 400px);
+          margin: 0 auto;
+        }
+      }
+
+      @media print{
+        body{ background: #e8dfd4; }
+        .media-kit{ padding-top: 12px; }
+      }
+    </style>
+  </head>
+  <body>
+
+    <article class="media-kit" aria-label="Media kit">
+      <header class="mk-header">
+        <h1 class="mk-title">Ki'Loni Lee</h1>
+        <p class="mk-tagline">Lifestyle <span aria-hidden="true">|</span> Fashion <span aria-hidden="true">|</span> Experiences</p>
+      </header>
+
+      <hr class="mk-rule" />
+
+      <section class="mk-section mk-about-stats" aria-labelledby="mk-about-heading">
+        <div class="mk-about-grid">
+          <div class="mk-about-stats-col">
+            <div class="mk-about-block">
+              <h2 id="mk-about-heading" class="mk-section-title">About me</h2>
+              <div class="mk-about-copy">
+                <p>
+                  Ki'Loni Lee is a lifestyle and fashion creator passionate about sharing authentic experiences, elevated everyday movements, and personal style through content that feels both aspirational and relatable. Her platform encourages women to embrace confidence, softness, and self-expression while finding joy in the little luxuries of life. She combines engaging storytelling with aesthetic visuals to create content her audience genuinely connects with.
+                </p>
+              </div>
+            </div>
+
+            <div class="mk-stats-wrap">
+              <h2 id="mk-stats-heading" class="mk-section-title mk-stats-inline-title">Statistics</h2>
+              <div class="mk-stats-layout">
+                <div class="mk-stat-rings" role="list">
+                  <div class="mk-stat" role="listitem">
+                    <div class="mk-stat-ring"><span class="mk-stat-value">24K</span></div>
+                    <span class="mk-stat-label">Followers</span>
+                  </div>
+                  <div class="mk-stat" role="listitem">
+                    <div class="mk-stat-ring"><span class="mk-stat-value">368K</span></div>
+                    <span class="mk-stat-label">Reach</span>
+                  </div>
+                  <div class="mk-stat" role="listitem">
+                    <div class="mk-stat-ring"><span class="mk-stat-value">80%</span></div>
+                    <span class="mk-stat-label">U.S. Based</span>
+                  </div>
+                  <div class="mk-stat" role="listitem">
+                    <div class="mk-stat-ring"><span class="mk-stat-value">7.8%</span></div>
+                    <span class="mk-stat-label">Engagement</span>
+                  </div>
+                </div>
+
+                <div class="mk-demo mk-demo--inline" aria-label="Audience gender split">
+                  <div class="mk-demo-row mk-demo-row--female">
+                    <span class="mk-demo-icon" aria-hidden="true">
+                      <svg class="mk-demo-svg mk-demo-svg--female" viewBox="0 0 48 96" fill="currentColor" xmlns="http://www.w3.org/2000/svg" focusable="false" shape-rendering="geometricPrecision">
+                        <circle cx="24" cy="14" r="10" />
+                        <path d="M24 26 L6 96 L42 96 Z" />
+                      </svg>
+                    </span>
+                    <span class="mk-demo-pct">74%</span>
+                  </div>
+                  <div class="mk-demo-row mk-demo-row--male">
+                    <span class="mk-demo-icon" aria-hidden="true">
+                      <svg class="mk-demo-svg mk-demo-svg--male" viewBox="0 0 48 96" fill="currentColor" xmlns="http://www.w3.org/2000/svg" focusable="false" shape-rendering="geometricPrecision">
+                        <circle cx="24" cy="14" r="10" />
+                        <rect x="13" y="26" width="22" height="64" />
+                      </svg>
+                    </span>
+                    <span class="mk-demo-pct">26%</span>
+                  </div>
+                </div>
+
+                <div class="mk-platform">
+                  <h3 class="mk-platform-title">Platform presence</h3>
+                  <ul class="mk-platform-list mk-platform-list--lines">
+                    <li>TIKTOK: 23.1K</li>
+                    <li>INSTAGRAM: 1.1K</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <figure class="mk-about-photo">
+            <img
+              src="https://sweetspicygoddess.com/IMG_2311.jpg"
+              alt="Ki'Loni Lee lying on a plush white bed, smiling with eyes closed, wearing a green ribbed top and jeans."
+              width="520"
+              height="650"
+              loading="eager"
+            />
+          </figure>
+        </div>
+      </section>
+
+      <hr class="mk-rule mk-rule--before-featured" />
+
+      <section class="mk-section mk-featured" aria-labelledby="mk-featured-heading">
+        <h2 id="mk-featured-heading" class="mk-section-title mk-section-title-center">Featured content</h2>
+
+        <div class="mk-featured-grid">
+          <article class="mk-feat">
+            <h3 class="mk-feat-heading">Fashion</h3>
+            <div class="mk-feat-frame mk-feat-frame--video" data-video-wrap>
+              <video
+                class="mk-featured-video"
+                playsinline
+                preload="metadata"
+                loop
+                title="Fashion clip"
+              >
+                <source src="https://sweetspicygoddess.com/media-kit/v15044gf0000d69olafog65ldgo0at70.mp4" type="video/mp4" />
+              </video>
+              <button class="mk-play-btn" aria-label="Play video" data-play-btn>
+                <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="32" cy="32" r="31" stroke="currentColor" stroke-width="2" fill="rgba(0,0,0,.45)"/><polygon points="26,20 26,44 46,32" fill="currentColor"/></svg>
+              </button>
+            </div>
+            <a class="mk-feat-fallback" href="https://www.tiktok.com/@sweetspicygoddess/video/7607576595603180830" target="_blank" rel="noopener noreferrer">Open on TikTok</a>
+          </article>
+          <article class="mk-feat">
+            <h3 class="mk-feat-heading">Lifestyle &amp; experience</h3>
+            <div class="mk-feat-frame mk-feat-frame--video" data-video-wrap>
+              <video
+                class="mk-featured-video"
+                playsinline
+                preload="metadata"
+                loop
+                title="Lifestyle &amp; experience clip"
+              >
+                <source src="https://sweetspicygoddess.com/media-kit/v15044gf0000d0ng84fog65stb3v5e9g.mp4" type="video/mp4" />
+              </video>
+              <button class="mk-play-btn" aria-label="Play video" data-play-btn>
+                <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="32" cy="32" r="31" stroke="currentColor" stroke-width="2" fill="rgba(0,0,0,.45)"/><polygon points="26,20 26,44 46,32" fill="currentColor"/></svg>
+              </button>
+            </div>
+            <a class="mk-feat-fallback" href="https://www.tiktok.com/@sweetspicygoddess/video/7507226012615331103" target="_blank" rel="noopener noreferrer">Open on TikTok</a>
+          </article>
+          <article class="mk-feat">
+            <h3 class="mk-feat-heading">UGC / product review</h3>
+            <div class="mk-feat-frame mk-feat-frame--video" data-video-wrap>
+              <video
+                class="mk-featured-video"
+                playsinline
+                preload="metadata"
+                loop
+                title="UGC / product review clip"
+              >
+                <source src="https://sweetspicygoddess.com/media-kit/v15044gf0000cuqci7nog65kdh4p5s5g.mp4" type="video/mp4" />
+              </video>
+              <button class="mk-play-btn" aria-label="Play video" data-play-btn>
+                <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="32" cy="32" r="31" stroke="currentColor" stroke-width="2" fill="rgba(0,0,0,.45)"/><polygon points="26,20 26,44 46,32" fill="currentColor"/></svg>
+              </button>
+            </div>
+            <a class="mk-feat-fallback" href="https://www.tiktok.com/@sweetspicygoddess/video/7472820222823583007" target="_blank" rel="noopener noreferrer">Open on TikTok</a>
+          </article>
+        </div>
+      </section>
+
+      <hr class="mk-rule" />
+
+      <footer class="mk-footer">
+        <p><span class="mk-footer-label">contact:</span> <a href="mailto:Thekilonilee@gmail.com">thekilonilee@gmail.com</a></p>
+        <p><span class="mk-footer-label">socials:</span> <a href="https://www.tiktok.com/@sweetspicygoddess" target="_blank" rel="noopener noreferrer">@sweetspicygoddess</a> · <a href="https://www.instagram.com/sweetspicygoddess" target="_blank" rel="noopener noreferrer">Instagram</a></p>
+      </footer>
+    </article>
+
+    <script>
+      (function () {
+        var wraps = document.querySelectorAll('[data-video-wrap]');
+        if (!wraps.length) return;
+        wraps.forEach(function (wrap) {
+          var video = wrap.querySelector('video');
+          var btn = wrap.querySelector('[data-play-btn]');
+          if (!video || !btn) return;
+          function showBtn() { btn.classList.remove('is-hidden'); }
+          function hideBtn() { btn.classList.add('is-hidden'); }
+          btn.addEventListener('click', function () {
+            if (video.paused) { video.play(); hideBtn(); }
+            else { video.pause(); showBtn(); }
+          });
+          video.addEventListener('click', function () {
+            if (video.paused) { video.play(); hideBtn(); }
+            else { video.pause(); showBtn(); }
+          });
+          video.addEventListener('pause', showBtn);
+          video.addEventListener('play', hideBtn);
+          video.addEventListener('ended', showBtn);
+        });
+      })();
+    </script>
+  </body>
+</html>

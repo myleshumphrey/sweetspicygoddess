@@ -1420,6 +1420,36 @@ body.media-kit-page .millie-header{
   height: auto;
   background: #000;
 }
+/* Custom centered play button overlay */
+.mk-play-btn{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: #fff;
+  z-index: 2;
+  transition: opacity .25s ease;
+}
+.mk-play-btn svg{
+  width: 64px;
+  height: 64px;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,.35));
+  transition: transform .15s ease;
+}
+.mk-play-btn:hover svg{
+  transform: scale(1.1);
+}
+.mk-play-btn.is-hidden{
+  opacity: 0;
+  pointer-events: none;
+}
 .mk-feat-frame--video:focus-within{
   outline: 2px solid rgba(58,52,46,.35);
   outline-offset: 2px;

@@ -157,4 +157,32 @@ function qs(sel, root = document) { return root.querySelector(sel); }
   updateCarousel();
 })();
 
+// Media-kit: custom play-button overlay for featured videos
+(() => {
+  const wraps = document.querySelectorAll('[data-video-wrap]');
+  if (!wraps.length) return;
+
+  wraps.forEach(wrap => {
+    const video = wrap.querySelector('video');
+    const btn = wrap.querySelector('[data-play-btn]');
+    if (!video || !btn) return;
+
+    function showBtn() { btn.classList.remove('is-hidden'); }
+    function hideBtn() { btn.classList.add('is-hidden'); }
+
+    btn.addEventListener('click', () => {
+      if (video.paused) { video.play(); hideBtn(); }
+      else { video.pause(); showBtn(); }
+    });
+
+    video.addEventListener('click', () => {
+      if (video.paused) { video.play(); hideBtn(); }
+      else { video.pause(); showBtn(); }
+    });
+
+    video.addEventListener('pause', showBtn);
+    video.addEventListener('play', hideBtn);
+    video.addEventListener('ended', showBtn);
+  });
+})();
 
