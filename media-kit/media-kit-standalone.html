@@ -31,11 +31,28 @@
       a{color:inherit; text-decoration:none}
       button, input, textarea{font:inherit}
 
+      section{ padding: 44px 0; }
       .media-kit{
         max-width: 1120px;
         margin: 0 auto;
-        padding: 28px 28px 20px;
+        padding: 40px 28px 20px;
         font-family: var(--mk-serif);
+      }
+      .mk-header-row{
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        gap: 16px;
+      }
+      .mk-location{
+        margin: 0;
+        font-size: clamp(1rem, 1.6vw, 1.25rem);
+        font-weight: 700;
+        letter-spacing: .06em;
+        text-transform: uppercase;
+        color: var(--mk-text);
+        white-space: nowrap;
+        align-self: flex-end;
       }
       .mk-header{ text-align: left; padding: 0; }
       .mk-title{
@@ -60,13 +77,13 @@
         border-top: 1px solid var(--mk-line);
         margin: 12px 0;
       }
-      .mk-header + .mk-rule{
-        width: 100%;
-        margin: 4px 0 0;
+      .mk-rule--about{
+        margin: 4px 0 10px;
       }
       .mk-rule--before-featured{ margin: 10px 0 8px; }
 
       .mk-section{ margin: 0; }
+      .mk-section.mk-about-stats{ padding-top: 22px; }
       .mk-section-title{
         margin: 0 0 6px;
         font-size: 1.95rem;
@@ -179,12 +196,12 @@
         color: var(--mk-text);
       }
       .mk-about-stats-col .mk-demo-svg{
-        width: 22px;
-        height: 42px;
+        width: 20px;
+        height: 32px;
         display: block;
         flex-shrink: 0;
       }
-      .mk-about-stats-col .mk-demo-svg--female{ width: 24px; }
+      .mk-about-stats-col .mk-demo-svg--female{ width: 20px; }
       .mk-about-stats-col .mk-demo-pct{
         font-family: var(--mk-serif);
         font-size: 1.18rem;
@@ -327,6 +344,10 @@
         width: 100%;
         height: auto;
         background: #000;
+        cursor: pointer;
+      }
+      .mk-featured-video::-webkit-media-controls{
+        display: none !important;
       }
       .mk-play-btn{
         position: absolute;
@@ -336,7 +357,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        background: none;
+        background: rgba(0,0,0,.12);
         border: none;
         padding: 0;
         cursor: pointer;
@@ -345,9 +366,9 @@
         transition: opacity .25s ease;
       }
       .mk-play-btn svg{
-        width: 64px;
-        height: 64px;
-        filter: drop-shadow(0 2px 8px rgba(0,0,0,.35));
+        width: 72px;
+        height: 72px;
+        filter: drop-shadow(0 2px 10px rgba(0,0,0,.45));
         transition: transform .15s ease;
       }
       .mk-play-btn:hover svg{ transform: scale(1.1); }
@@ -374,6 +395,10 @@
         text-underline-offset: 3px;
       }
       .mk-footer a:hover{ opacity: .85; }
+      .mk-footer.mk-footer--three{ justify-content: space-between; }
+      .mk-footer--three p{ flex: 0 1 auto; text-align: center; }
+      .mk-footer--three p:first-child{ text-align: left; }
+      .mk-footer--three p:last-child{ text-align: right; }
 
       /* Responsive */
       @media (max-width: 720px){
@@ -427,16 +452,18 @@
   <body>
 
     <article class="media-kit" aria-label="Media kit">
-      <header class="mk-header">
-        <h1 class="mk-title">Ki'Loni Lee</h1>
-        <p class="mk-tagline">Lifestyle <span aria-hidden="true">|</span> Fashion <span aria-hidden="true">|</span> Experiences</p>
-      </header>
-
-      <hr class="mk-rule" />
+      <div class="mk-header-row">
+        <header class="mk-header">
+          <h1 class="mk-title">Ki'Loni Lee</h1>
+          <p class="mk-tagline">Lifestyle <span aria-hidden="true">|</span> Fashion <span aria-hidden="true">|</span> Experiences</p>
+        </header>
+        <p class="mk-location">Atlanta, GA</p>
+      </div>
 
       <section class="mk-section mk-about-stats" aria-labelledby="mk-about-heading">
         <div class="mk-about-grid">
           <div class="mk-about-stats-col">
+            <hr class="mk-rule mk-rule--about" />
             <div class="mk-about-block">
               <h2 id="mk-about-heading" class="mk-section-title">About me</h2>
               <div class="mk-about-copy">
@@ -471,18 +498,16 @@
                 <div class="mk-demo mk-demo--inline" aria-label="Audience gender split">
                   <div class="mk-demo-row mk-demo-row--female">
                     <span class="mk-demo-icon" aria-hidden="true">
-                      <svg class="mk-demo-svg mk-demo-svg--female" viewBox="0 0 48 96" fill="currentColor" xmlns="http://www.w3.org/2000/svg" focusable="false" shape-rendering="geometricPrecision">
-                        <circle cx="24" cy="14" r="10" />
-                        <path d="M24 26 L6 96 L42 96 Z" />
+                      <svg class="mk-demo-svg mk-demo-svg--female" viewBox="0 0 320 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg" focusable="false">
+                        <path d="M160 0a48 48 0 1 1 0 96 48 48 0 1 1 0-96zM88 384l-17.8 0c-10.9 0-18.6-10.7-15.2-21.1L93.3 248.1 59.4 304.5c-9.1 15.1-28.8 20-43.9 10.9s-20-28.8-10.9-43.9l53.6-89.2c20.3-33.7 56.7-54.3 96-54.3l11.6 0c39.3 0 75.7 20.6 96 54.3l53.6 89.2c9.1 15.1 4.2 34.8-10.9 43.9s-34.8 4.2-43.9-10.9l-33.9-56.3L265 362.9c3.5 10.4-4.3 21.1-15.2 21.1L232 384l0 96c0 17.7-14.3 32-32 32s-32-14.3-32-32l0-96-16 0 0 96c0 17.7-14.3 32-32 32s-32-14.3-32-32l0-96z"/>
                       </svg>
                     </span>
                     <span class="mk-demo-pct">74%</span>
                   </div>
                   <div class="mk-demo-row mk-demo-row--male">
                     <span class="mk-demo-icon" aria-hidden="true">
-                      <svg class="mk-demo-svg mk-demo-svg--male" viewBox="0 0 48 96" fill="currentColor" xmlns="http://www.w3.org/2000/svg" focusable="false" shape-rendering="geometricPrecision">
-                        <circle cx="24" cy="14" r="10" />
-                        <rect x="13" y="26" width="22" height="64" />
+                      <svg class="mk-demo-svg mk-demo-svg--male" viewBox="0 0 320 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg" focusable="false">
+                        <path d="M112 48a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm40 304l0 128c0 17.7-14.3 32-32 32s-32-14.3-32-32l0-223.1L59.4 304.5c-9.1 15.1-28.8 20-43.9 10.9s-20-28.8-10.9-43.9l58.3-97c17.4-28.9 48.6-46.6 82.3-46.6l29.7 0c33.7 0 64.9 17.7 82.3 46.6l58.3 97c9.1 15.1 4.2 34.8-10.9 43.9s-34.8 4.2-43.9-10.9L232 256.9 232 480c0 17.7-14.3 32-32 32s-32-14.3-32-32l0-128-16 0z"/>
                       </svg>
                     </span>
                     <span class="mk-demo-pct">26%</span>
@@ -577,9 +602,10 @@
 
       <hr class="mk-rule" />
 
-      <footer class="mk-footer">
+      <footer class="mk-footer mk-footer--three">
+        <p><span class="mk-footer-label">tiktok:</span> <a href="https://www.tiktok.com/@sweetspicygoddess" target="_blank" rel="noopener noreferrer">sweetspicygoddess</a></p>
+        <p><span class="mk-footer-label">instagram:</span> <a href="https://www.instagram.com/sweetspicygoddess/" target="_blank" rel="noopener noreferrer">sweetspicygoddess</a></p>
         <p><span class="mk-footer-label">contact:</span> <a href="mailto:Thekilonilee@gmail.com">thekilonilee@gmail.com</a></p>
-        <p><span class="mk-footer-label">socials:</span> <a href="https://www.tiktok.com/@sweetspicygoddess" target="_blank" rel="noopener noreferrer">@sweetspicygoddess</a> · <a href="https://www.instagram.com/sweetspicygoddess" target="_blank" rel="noopener noreferrer">Instagram</a></p>
       </footer>
     </article>
 
@@ -591,15 +617,21 @@
           var video = wrap.querySelector('video');
           var btn = wrap.querySelector('[data-play-btn]');
           if (!video || !btn) return;
-          function showBtn() { btn.classList.remove('is-hidden'); }
-          function hideBtn() { btn.classList.add('is-hidden'); }
+          video.removeAttribute('controls');
+          function showBtn() {
+            btn.classList.remove('is-hidden');
+            video.removeAttribute('controls');
+          }
+          function hideBtn() {
+            btn.classList.add('is-hidden');
+            video.setAttribute('controls', '');
+          }
           btn.addEventListener('click', function () {
-            if (video.paused) { video.play(); hideBtn(); }
-            else { video.pause(); showBtn(); }
+            video.play();
+            hideBtn();
           });
           video.addEventListener('click', function () {
-            if (video.paused) { video.play(); hideBtn(); }
-            else { video.pause(); showBtn(); }
+            if (!video.paused) { video.pause(); showBtn(); }
           });
           video.addEventListener('pause', showBtn);
           video.addEventListener('play', hideBtn);
